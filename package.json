@@ -1,0 +1,23 @@
+{
+  "name": "voting-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "ably": "^1.2.2",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "client-install": "npm install --prefix voting-app",
+    "start": "node server.js",
+    "start-client": "npm start --prefix voting-app",
+    "dev": "concurrently \"npm start\" \"npm run start-client\"",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install -prefix voting-app && npm run build --prefix voting-app"
+  },
+  "author": "",
+  "license": "ISC"
+}
